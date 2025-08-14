@@ -1,0 +1,227 @@
+/* Proyecto/style/styles.css
+   Diseñado para usarse junto con Bootstrap (CDN) y la fuente Inter.
+*/
+
+/* ---------- Variables de tema ---------- */
+:root{
+  --brand: #0d6efd;         /* azul principal (Bootstrap-like) */
+  --muted: #6c757d;
+  --bg: #f8fafc;            /* fondo claro suave */
+  --card-bg: #ffffff;
+  --surface-shadow: 0 6px 18px rgba(15,23,42,0.06);
+  --radius: 12px;
+  --code-bg: #0f1724;       /* fondo oscuro para código */
+  --code-color: #e6eef8;
+  --accent: #7c3aed;        /* color secundario para detalles */
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: #111827;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container spacing (complementa .container de Bootstrap) */
+main.container {
+  max-width: 960px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* ---------- Header / Nav ---------- */
+header.bg-light {
+  border-bottom: 1px solid rgba(17,24,39,0.04);
+}
+
+/* Brand */
+header .h5 {
+  color: var(--brand);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Nav links: estilo limpio y accesible */
+header .nav {
+  gap: 0.5rem;
+  align-items: center;
+}
+
+header .nav-link {
+  color: var(--muted);
+  padding: 0.375rem 0.5rem;
+  border-radius: 8px;
+  transition: color .15s ease, background-color .15s ease, transform .08s ease;
+  font-weight: 600;
+  font-size: .95rem;
+}
+
+header .nav-link:hover,
+header .nav-link:focus {
+  color: #0b5ed7;
+  text-decoration: none;
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* Marcar la página activa (agregar class="active" manualmente al enlace) */
+header .nav-link.active {
+  color: var(--brand);
+  background: linear-gradient(90deg, rgba(13,110,253,0.08), rgba(124,58,237,0.02));
+  box-shadow: inset 0 -2px 0 rgba(13,110,253,0.12);
+}
+
+/* Mejor foco para teclado */
+a:focus, button:focus {
+  outline: 3px solid rgba(13,110,253,0.18);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* ---------- Article / Card look ---------- */
+article {
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), var(--card-bg));
+  border-radius: var(--radius);
+  box-shadow: var(--surface-shadow);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Headings */
+h1 {
+  font-size: 1.85rem;
+  margin-bottom: 0.5rem;
+  color: #0f1724;
+}
+h2 {
+  font-size: 1.15rem;
+  margin-top: 1.25rem;
+  margin-bottom: .5rem;
+  color: #111827;
+}
+
+/* Lead paragraph style */
+p.lead, article > p:first-of-type {
+  font-size: 1.02rem;
+  color: #374151;
+  margin-bottom: 0.9rem;
+}
+
+/* Lists spacing */
+ul, ol {
+  margin-left: 1.1rem;
+  color: #374151;
+}
+
+/* CTA button override */
+.btn-outline-secondary {
+  border-radius: 10px;
+  padding: .5rem .85rem;
+  font-weight: 600;
+}
+
+/* A small accent variant you can use */
+.btn-accent {
+  background: linear-gradient(90deg, var(--accent), var(--brand));
+  color: white;
+  border: none;
+  box-shadow: 0 6px 18px rgba(12,74,110,0.08);
+}
+.btn-accent:hover { transform: translateY(-2px); }
+
+/* ---------- Code block styling (pre/code) ---------- */
+pre {
+  background: var(--code-bg);
+  color: var(--code-color);
+  padding: 1rem;
+  border-radius: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  font-size: .95rem;
+  overflow: auto;
+  white-space: pre;
+  line-height: 1.45;
+  box-shadow: 0 4px 14px rgba(2,6,23,0.15);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Make inline code distinct */
+code {
+  background: rgba(15,23,36,0.04);
+  padding: .15rem .35rem;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+  font-size: .95em;
+  color: #111827;
+}
+
+/* Pre/code long lines */
+pre code {
+  display: block;
+}
+
+/* ---------- Footer ---------- */
+footer.bg-dark {
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+footer small {
+  color: rgba(255,255,255,0.85);
+  letter-spacing: .2px;
+}
+
+@media (max-width: 768px) {
+  main.container { padding-left: 1rem; padding-right: 1rem; }
+  article { padding: 1.25rem; }
+  header .nav { display: flex; gap: .25rem; }
+  header .h5 { font-size: 1.05rem; }
+}
+
+.text-muted-small { color: var(--muted); font-size: .9rem; }
+
+.hide-sm { display: inline; }
+@media (max-width: 576px) { .hide-sm { display: none; } }
+
+.topic-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(17,24,39,0.03);
+  border: 1px solid rgba(15,23,42,0.03);
+}
+.timeline {
+  position: relative;
+  padding-left: 2.5rem; /* más espacio para no chocar con el círculo */
+  margin-top: 2rem;
+  border-left: 3px solid var(--brand);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -18px; /* más a la izquierda */
+  top: 5px; /* un poco más abajo para alinear con texto */
+  width: 16px;
+  height: 16px;
+  background: var(--brand);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px white;
+}
+
+.timeline-item img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  box-shadow: var(--surface-shadow);
+}
