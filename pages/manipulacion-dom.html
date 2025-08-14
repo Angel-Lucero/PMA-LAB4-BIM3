@@ -13,15 +13,15 @@
     <nav class="container d-flex justify-content-between align-items-center" aria-label="Navegación principal">
       <a class="h5 mb-0 text-decoration-none" href="introduccion.html">Enciclopedia JS</a>
       <ul class="nav">
-        <li class="nav-item"><a class="nav-link" href="introduccion.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="bucles.html">Bucles</a></li>
-        <li class="nav-item"><a class="nav-link" href="condicionales.html">Condicionales</a></li>
-        <li class="nav-item"><a class="nav-link" href="funciones.html">Funciones</a></li>
-        <li class="nav-item"><a class="nav-link" href="operadores.html">Operadores</a></li>
-        <li class="nav-item"><a class="nav-link" href="sintaxis.html">Sintaxis</a></li>
-        <li class="nav-item"><a class="nav-link" href="tipos.html">Tipos</a></li>
-        <li class="nav-item"><a class="nav-link" href="variables.html">Variables</a></li>
-        <li class="nav-item"><a class="nav-link active" href="manipulacion-dom.html">Manipulación del DOM</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+      <li class="nav-item"><a class="nav-link" href="../pages/bucles.html">Bucles</a></li>
+      <li class="nav-item"><a class="nav-link" href="../pages/condicionales.html">Condicionales</a></li>
+      <li class="nav-item"><a class="nav-link" href="../pages/funciones.html">Funciones</a></li>
+      <li class="nav-item"><a class="nav-link" href="../pages/operadores.html">Operadores</a></li>
+      <li class="nav-item"><a class="nav-link" href="../pages/sintaxis.html">Sintaxis</a></li>
+      <li class="nav-item"><a class="nav-link" href="../pages/tipos.html">Tipos</a></li>
+      <li class="nav-item"><a class="nav-link" href="../pages/variables.html">Variables</a></li>
+      <li class="nav-item"><a class="nav-link" href="../pages/manipulacion-dom.html">Manipulación DOM</a></li>
       </ul>
     </nav>
   </header>
@@ -29,7 +29,6 @@
     <article>
       <h1>Manipulación del DOM</h1>
       <p>El DOM (Document Object Model) es la representación en memoria de la estructura de un documento HTML. JavaScript nos permite manipularlo para cambiar el contenido, estilos y estructura de una página en tiempo real.</p>
-
       <h2>Seleccionar elementos</h2>
       <p>Los métodos más comunes para seleccionar elementos son:</p>
       <ul>
@@ -37,7 +36,9 @@
         <li><strong>querySelector(selector)</strong> — Selecciona el primer elemento que coincida con un selector CSS.</li>
         <li><strong>querySelectorAll(selector)</strong> — Selecciona todos los elementos que coincidan con un selector CSS.</li>
       </ul>
-
+      <div class="">
+					<img src="../images/dom.png" class="img-fluid" alt="funciones">
+				</div>
       <h3>Ejemplo</h3>
       <pre><code class="language-js">
 // Seleccionando por ID
@@ -49,7 +50,6 @@ const parrafo = document.querySelector(".texto");
 // Cambiando el contenido
 titulo.innerHTML = "Nuevo título dinámico";
       </code></pre>
-
       <h2>Modificar contenido</h2>
       <p>La propiedad <code>innerHTML</code> permite cambiar el HTML interno de un elemento.</p>
 
@@ -57,19 +57,12 @@ titulo.innerHTML = "Nuevo título dinámico";
       <pre><code class="language-js">
 document.getElementById("demo").innerHTML = "Texto cambiado desde JavaScript";
       </code></pre>
-
-      <h3>Demostración</h3>
-      <div class="p-3 bg-light border rounded">
-        <h4 id="miTitulo">Título original</h4>
-        <p id="demo">Texto original</p>
-        <button class="btn btn-primary" onclick="document.getElementById('demo').innerHTML = 'Texto cambiado desde el botón'">Cambiar texto</button>
-      </div>
-    </article>
     <a class="btn btn-accent mt-4" href="bucles.html">Siguiente: Bucles</a>
   </main>
   <footer class="bg-dark text-white py-3 mt-5">
-    <div class="container text-center"><small>&copy; 2025 — Enciclopedia JS</small></div>
+    <div class="container text-center">
+			<small>© 2025 — Enciclopedia JS. Todos los derechos de esta página le pertenecen a Angel Lucero 2021211.</small>
+    </div>
   </footer>
-
 </body>
 </html>
